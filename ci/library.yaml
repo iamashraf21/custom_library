@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+resources:
+  repositories:
+  - repository: custom_library
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/custom_library
+    trigger:
+      - main
+
+pool: MyLocalPool
+
+steps:
+- checkout: custom_library
+- script: ./run-test.sh
+  workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
+  displayName: 'custom library checkout'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
+    testRunTitle: 'Publish test results'
+    failTaskOnFailedTests: true
+
