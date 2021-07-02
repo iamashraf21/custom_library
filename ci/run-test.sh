@@ -4,11 +4,11 @@ echo "Starting the shell script"
 set -e
 # Enable the globstar shell option
 shopt -s globstar
-ls -lRh
-#cd $HOME/Documents/myagent/_work/4/s/custom_library/test/
-#arduino-cli compile -b Seeeduino:samd:zero -e
-#arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
 
-#sleep 5
-#python SerialRead.py
+cd ../test
+arduino-cli compile -b Seeeduino:samd:zero -e
+arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
+
+sleep 5
+python SerialRead.py
 
