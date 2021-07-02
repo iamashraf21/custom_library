@@ -5,9 +5,14 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 
-cd ../test
+echo "compiling examples"
+cd ../examples/ecc_test
 arduino-cli compile -b Seeeduino:samd:zero -e
-arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
+
+echo "compiling Aunit testcases"
+cd ../../test
+arduino-cli compile -b Seeeduino:samd:zero -e
+#arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
 
 sleep 5
 python SerialRead.py
