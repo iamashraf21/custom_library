@@ -12,7 +12,7 @@ arduino-cli compile -b Seeeduino:samd:zero -e
 echo "compiling Aunit testcases"
 cd ../../test
 arduino-cli compile -b Seeeduino:samd:zero -e
-#arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
+arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
 
 sleep 5
 python SerialRead.py
