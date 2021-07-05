@@ -1,6 +1,6 @@
 #include <uECC.h>
 
-extern "C" {
+//extern "C" {
 
 static int RNG(uint8_t *dest, unsigned size) {
   // Use the least-significant bits from the ADC for an unconnected pin (or connected to a source of 
@@ -29,7 +29,7 @@ static int RNG(uint8_t *dest, unsigned size) {
   return 1;
 }
 
-}  // extern "C"
+//}  // extern "C"
 
 void setup() {
   Serial.begin(115200);
