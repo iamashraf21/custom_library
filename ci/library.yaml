@@ -11,6 +11,7 @@ resources:
     name: iamashraf21/custom_library
     trigger:
       - main
+      - dev
 
 pool: MyLocalPool
 
