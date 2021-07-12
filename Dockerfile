@@ -10,9 +10,15 @@ ADD myscript.py /
 
 RUN python -m pip install pyserial
 
-CMD [ "python", "./myscript.py" ]
-
 RUN curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
 
-CMD ["arduino-cli", "core", "update-index"]
+RUN echo "# arduino-cli.yaml \n\
+board_manager: \n\
+  additional_urls: \n\
+    - https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json" > arduino-cli.yaml
 
+RUN cat arduino-cli.yaml
+
+RUN arduino-cli core update-index
+
+RUN arduino-cli core search samd
