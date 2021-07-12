@@ -7,7 +7,7 @@ test(correct) {
 
 test(incorrect) {
   int x = 2;
-  assertNotEqual(x, 2);
+  assertNotEqual(x, 9);
 }
 
 test(Custom) {
