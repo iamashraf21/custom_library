@@ -6,8 +6,6 @@ RUN apt-get update
 
 RUN apt-get install curl
 
-ADD myscript.py /
-
 RUN python -m pip install pyserial
 
 RUN curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
