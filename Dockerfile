@@ -20,3 +20,5 @@ RUN cat arduino-cli.yaml
 RUN arduino-cli core update-index
 
 RUN arduino-cli core search samd
+
+RUN arduino-cli core install Seeeduino:samd
