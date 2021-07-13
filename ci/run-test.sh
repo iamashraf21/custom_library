@@ -7,6 +7,8 @@ shopt -s globstar
 
 echo "compiling examples"
 
+arduino-cli core search Moteino
+
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 
