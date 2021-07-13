@@ -7,15 +7,13 @@ shopt -s globstar
 
 echo "compiling examples"
 
-arduino-cli core search samd
-
 cd ../examples/ecc_test
-arduino-cli compile -b Seeeduino:samd:zero -e
+arduino-cli compile -b Moteino:samd:moteino_m0 -e
 
 echo "compiling Aunit testcases"
 cd ../../test
-arduino-cli compile -b Seeeduino:samd:zero -e
-arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
+arduino-cli compile -b Moteino:samd:moteino_m0 -e
+arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
 sleep 5
 python SerialRead.py
