@@ -6,6 +6,9 @@ set -e
 shopt -s globstar
 
 echo "compiling examples"
+
+arduino-cli core search samd
+
 cd ../examples/ecc_test
 arduino-cli compile -b Seeeduino:samd:zero -e
 
