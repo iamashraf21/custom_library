@@ -17,7 +17,7 @@ arduino-cli lib install micro-ecc
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
 
 echo "compiling Aunit testcases"
-cd ../../test
+cd ../test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
