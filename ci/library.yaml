@@ -1,24 +1,14 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-resources:
-  repositories:
-  - repository: custom_library
-    type: github
-    endpoint: iamashraf21
-    name: iamashraf21/custom_library
-    trigger:
-      - main
-
 pool: MyLocalPool
 
+container:
+  image: myworkregistry007.azurecr.io/iot_repo:DigitalSigning532
+  endpoint: myWorkRegistry007
+  options: -v /dev:/dev
+
 steps:
-- checkout: custom_library
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/ci'
-  displayName: 'custom library checkout'
+  displayName: 'Running the shell script'
 
 - task: PublishTestResults@2
   inputs:
