@@ -1,7 +1,7 @@
 pool: MyLocalPool
 
 container:
-  image: myworkregistry007.azurecr.io/repository:latest
+  image: pull myworkregistry007.azurecr.io/new_repo:latest
   endpoint: myWorkRegistry007
   options: -v /dev:/dev
 
