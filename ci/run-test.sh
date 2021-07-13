@@ -9,6 +9,7 @@ echo "compiling examples"
 
 arduino-cli core search Moteino
 
+arduino-cli core install Moteino:samd
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 
