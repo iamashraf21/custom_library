@@ -13,12 +13,12 @@ RUN curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/inst
 RUN echo "# arduino-cli.yaml \n\
 board_manager: \n\
   additional_urls: \n\
-    - https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json" > arduino-cli.yaml
+    - https://lowpowerlab.github.io/MoteinoCore/package_LowPowerLab_index.json" > arduino-cli.yaml
 
 RUN cat arduino-cli.yaml
 
 RUN arduino-cli core update-index
 
-RUN arduino-cli core search samd
+RUN arduino-cli core search Moteino
 
-RUN arduino-cli core install Seeeduino:samd
+RUN arduino-cli core install Moteino:samd
