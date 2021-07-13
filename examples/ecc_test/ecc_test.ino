@@ -1,9 +1,4 @@
 #include <uECC.h>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> b3a767e5d835972a28401f4943083017cc41658a
 static int RNG(uint8_t *dest, unsigned size) {
   // Use the least-significant bits from the ADC for an unconnected pin (or connected to a source of 
   // random noise). This can take a long time to generate random data if the result of analogRead(0) 
