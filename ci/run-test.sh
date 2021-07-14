@@ -15,8 +15,8 @@ arduino-cli lib install micro-ecc
 arduino-cli lib install AUnit
 
 ls -l /dev/ttyACM0
-adduser $USER dialout
-groups $USER
+sudo adduser $USER dialout
+sudo groups $USER
 #usermod -a -G dialout $USER
 ls -l /dev/ttyACM0
 #chmod a+rw /dev/ttyACM0
