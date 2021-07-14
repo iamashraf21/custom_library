@@ -4,6 +4,8 @@ FROM python:3
 
 RUN apt-get update 
 
+RUN apk add bash sudo shadow
+
 RUN apt-get install curl
 
 RUN python -m pip install pyserial
