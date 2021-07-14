@@ -2,9 +2,10 @@ FROM ubuntu:latest
 
 FROM python:3
 
-RUN apt-get update 
+RUN apt-get update && \
+      apt-get -y install sudo
 
-RUN apk add bash sudo shadow
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 RUN apt-get install curl
 
