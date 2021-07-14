@@ -15,7 +15,8 @@ arduino-cli lib install micro-ecc
 arduino-cli lib install AUnit
 
 ls -l /dev/ttyACM0
-usermod -a -G dialout $USER
+adduser $USER dialout
+#usermod -a -G dialout $USER
 ls -l /dev/ttyACM0
 #chmod a+rw /dev/ttyACM0
 #cd ../examples/ecc_test
