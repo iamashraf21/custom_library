@@ -9,13 +9,13 @@ echo "compiling examples"
 
 #arduino-cli core search Moteino
 
-#arduino-cli core install Moteino:samd
+arduino-cli core install Moteino:samd
 
 #arduino-cli lib install micro-ecc
 #arduino-cli lib install AUnit
 whoami
 ls -l /dev/ttyACM0
-#sudo usermod -a -G dialout $USER
+usermod -a -G dialout docker
 #sudo chmod a+rw /dev/ttyACM0
 #ls -l /dev/ttyACM0
 #cd ../examples/ecc_test
