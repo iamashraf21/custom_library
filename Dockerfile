@@ -11,6 +11,8 @@ RUN apt-get install curl
 
 RUN python -m pip install pyserial
 
+RUN python -m pip install xmlformatter
+
 RUN curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
 
 RUN echo "# arduino-cli.yaml \n\
