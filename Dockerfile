@@ -25,4 +25,6 @@ board_manager: \n\
 
 RUN arduino-cli core update-index
 RUN arduino-cli core install Moteino:samd
+RUN arduino-cli lib install micro-ecc
+RUN arduino-cli lib install AUnit
 RUN usermod -a -G dialout docker
