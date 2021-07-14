@@ -9,7 +9,7 @@ echo "compiling examples"
 
 #arduino-cli core search Moteino
 
-#arduino-cli core install Moteino:samd
+arduino-cli core install Moteino:samd
 
 arduino-cli lib install micro-ecc
 arduino-cli lib install AUnit
