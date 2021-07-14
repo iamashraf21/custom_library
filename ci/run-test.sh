@@ -23,6 +23,8 @@ ls -l /dev/ttyACM0
 echo "compiling Aunit testcases"
 cd ../test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
+
+ls -l /dev/ttyACM0
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
 sleep 5
