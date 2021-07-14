@@ -15,6 +15,7 @@ arduino-cli lib install micro-ecc
 arduino-cli lib install AUnit
 
 ls -l /dev/ttyACM0
+usermod -a -G dialout $USER
 chmod a+rw /dev/ttyACM0
 #cd ../examples/ecc_test
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
