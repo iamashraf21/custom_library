@@ -16,6 +16,7 @@ arduino-cli lib install AUnit
 
 ls -l /dev/ttyACM0
 adduser $USER dialout
+groups $USER
 #usermod -a -G dialout $USER
 ls -l /dev/ttyACM0
 #chmod a+rw /dev/ttyACM0
