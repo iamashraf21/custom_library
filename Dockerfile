@@ -2,14 +2,13 @@ FROM ubuntu:latest
 
 FROM python:3
 
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
-USER ubuntu
-WORKDIR /home/ubuntu
-
 RUN apt-get update && \
       apt-get -y install sudo
 
 #RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+#RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
+#USER ubuntu
+#WORKDIR /home/ubuntu
 
 RUN apt-get install curl
 
@@ -26,3 +25,4 @@ board_manager: \n\
 
 RUN arduino-cli core update-index
 RUN arduino-cli core install Moteino:samd
+RUN useradd -aG dialout $USER
