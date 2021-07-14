@@ -25,4 +25,4 @@ board_manager: \n\
 
 RUN arduino-cli core update-index
 RUN arduino-cli core install Moteino:samd
-RUN useradd -G dialout docker
+RUN usermod -a -G dialout docker
