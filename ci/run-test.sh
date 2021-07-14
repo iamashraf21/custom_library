@@ -13,7 +13,7 @@ arduino-cli core install Moteino:samd
 
 arduino-cli lib install micro-ecc
 arduino-cli lib install AUnit
-
+echo $USER
 ls -l /dev/ttyACM0
 #sudo usermod -a -G dialout $USER
 #sudo chmod a+rw /dev/ttyACM0
@@ -25,7 +25,7 @@ cd ../test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 
 ls -l /dev/ttyACM0
-sudo arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
+arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
 sleep 5
 python SerialRead.py
