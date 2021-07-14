@@ -1,4 +1,7 @@
-pool: MyLocalPool
+#pool: MyLocalPool
+pool:
+  vmImage: ubuntu-16.04
+
 
 container:
   image: myworkregistry007.azurecr.io/new_repo:latest
