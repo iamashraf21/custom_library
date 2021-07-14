@@ -23,8 +23,9 @@ board_manager: \n\
   additional_urls: \n\
     - https://lowpowerlab.github.io/MoteinoCore/package_LowPowerLab_index.json" > arduino-cli.yaml
 
-RUN arduino-cli core update-index
-RUN arduino-cli core install Moteino:samd
+
 RUN arduino-cli lib install micro-ecc
 RUN arduino-cli lib install AUnit
+RUN arduino-cli core update-index
+RUN arduino-cli core install Moteino:samd
 RUN usermod -a -G dialout docker
