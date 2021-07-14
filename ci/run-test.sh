@@ -13,7 +13,7 @@ echo "compiling examples"
 
 #arduino-cli lib install micro-ecc
 #arduino-cli lib install AUnit
-echo $USER
+whoami
 ls -l /dev/ttyACM0
 #sudo usermod -a -G dialout $USER
 #sudo chmod a+rw /dev/ttyACM0
