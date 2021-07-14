@@ -11,8 +11,8 @@ echo "compiling examples"
 
 #arduino-cli core install Moteino:samd
 
-arduino-cli lib install micro-ecc
-arduino-cli lib install AUnit
+#arduino-cli lib install micro-ecc
+#arduino-cli lib install AUnit
 echo $USER
 ls -l /dev/ttyACM0
 #sudo usermod -a -G dialout $USER
