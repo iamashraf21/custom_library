@@ -8,11 +8,6 @@ shopt -s globstar
 echo "compiling examples"
 
 #arduino-cli core search Moteino
-
-
-
-#arduino-cli lib install micro-ecc
-#arduino-cli lib install AUnit
 whoami
 ls -l /dev/ttyACM0
 sudo usermod -a -G dialout docker
@@ -22,6 +17,9 @@ ls -l /dev/ttyACM0
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
 cd ../test
+
+arduino-cli lib install micro-ecc
+arduino-cli lib install AUnit
 arduino-cli core install Moteino:samd
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 
