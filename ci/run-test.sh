@@ -9,14 +9,9 @@ echo "compiling examples"
 
 #arduino-cli core search Moteino
 whoami
-cd ~/../
-
-ls -l
-
-ls -l /dev/ttyACM0
 sudo usermod -a -G dialout docker
 #sudo chmod a+rw /dev/ttyACM0
-ls -l /dev/ttyACM0
+
 #cd ../examples/ecc_test
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
@@ -26,8 +21,6 @@ arduino-cli lib install micro-ecc
 sudo ls -l /root/Arduino/libraries/AUnit/
 #arduino-cli core install Moteino:samd
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
-
-ls -l /dev/ttyACM0
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
 sleep 5
