@@ -1,5 +1,5 @@
-pool: MyLocalPool
-
+pool:
+  vmImage: ubuntu-18.04
 
 container:
   image: myworkregistry007.azurecr.io/build_repo:767
