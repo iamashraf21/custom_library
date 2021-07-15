@@ -16,7 +16,7 @@ ls -l /dev/ttyACM0
 #cd ../examples/ecc_test
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
-sudo cp ../lib/AUnit /root/Arduino/libraries/
+sudo cp -r ../lib/AUnit /root/Arduino/libraries/
 cd ../test
 arduino-cli lib install micro-ecc
 arduino-cli core install Moteino:samd
