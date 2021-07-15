@@ -9,6 +9,10 @@ echo "compiling examples"
 
 #arduino-cli core search Moteino
 whoami
+cd ~/../
+
+ls -l
+
 ls -l /dev/ttyACM0
 sudo usermod -a -G dialout docker
 #sudo chmod a+rw /dev/ttyACM0
