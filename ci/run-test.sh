@@ -17,13 +17,13 @@ echo "compiling Aunit testcases"
 ls -l ~/
 
 mkdir ~/Arduino
-mkdir ~/libraries
+mkdir ~/Arduino/libraries
 
 sudo cp -r ../lib/AUnit ~/Arduino/libraries/
 cd ../test
 
-arduino-cli lib install micro-ecc
-sudo ls -l /root/Arduino/libraries/AUnit/
+#arduino-cli lib install micro-ecc
+sudo ls -l ~/Arduino/libraries/AUnit/
 
 arduino-cli core install Moteino:samd
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
