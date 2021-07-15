@@ -14,18 +14,15 @@ sudo usermod -a -G dialout docker
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
 
-ls -l ~/
-
 mkdir ~/Arduino
 mkdir ~/Arduino/libraries
 
 sudo cp -r ../lib/AUnit ~/Arduino/libraries/
 cd ../test
 
-#arduino-cli lib install micro-ecc
 sudo ls -l ~/Arduino/libraries/AUnit/
 
-arduino-cli core install Moteino:samd
+#arduino-cli core install Moteino:samd
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
