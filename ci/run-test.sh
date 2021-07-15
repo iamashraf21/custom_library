@@ -15,7 +15,7 @@ echo "compiling examples"
 #arduino-cli lib install AUnit
 whoami
 ls -l /dev/ttyACM0
-usermod -a -G dialout docker
+sudo usermod -a -G dialout docker
 #sudo chmod a+rw /dev/ttyACM0
 ls -l /dev/ttyACM0
 #cd ../examples/ecc_test
