@@ -157,8 +157,6 @@ bool compareEqual(unsigned long long a, unsigned long long b);
 
 bool compareEqual(double a, double b);
 
-bool compareEqual(const void* a, const void* b);
-
 bool compareEqual(const char* a, const char* b);
 
 bool compareEqual(const char* a, const String& b);
@@ -350,8 +348,6 @@ bool compareNotEqual(long long a, long long b);
 bool compareNotEqual(unsigned long long a, unsigned long long b);
 
 bool compareNotEqual(double a, double b);
-
-bool compareNotEqual(const void* a, const void* b);
 
 bool compareNotEqual(const char* a, const char* b);
 

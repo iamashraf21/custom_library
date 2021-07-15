@@ -23,11 +23,10 @@ SOFTWARE.
 */
 
 #include <Arduino.h> // Serial
-#include "Flash.h"
 #include "Printer.h"
 
 namespace aunit {
 
-Print* Printer::sPrinter = nullptr;
+Print* Printer::sPrinter = &Serial;
 
 }

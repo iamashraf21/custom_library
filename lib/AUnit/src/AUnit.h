@@ -27,10 +27,6 @@ SOFTWARE.
  *
  * This is the Doxygen documentation for the
  * <a href="https://github.com/bxparks/AUnit">AUnit Library</a>.
- *
- * Click on the "Classes" menu above to see the list of classes.
- *
- * Click on the "Files" menu above to see the list of header files.
  */
 
 /**
@@ -44,17 +40,6 @@ SOFTWARE.
 
 #ifndef AUNIT_AUNIT_H
 #define AUNIT_AUNIT_H
-
-// Blacklist boards using new Arduino API due to incompatibilities. This
-// currently includes all megaAVR boards and SAMD21 boards using arduino::samd
-// >= 1.8.10. Boards using arduino:samd <= 1.8.9 or SparkFun:samd are fine.
-#if defined(ARDUINO_ARCH_MEGAAVR)
-#error MegaAVR not supported, https://github.com/bxparks/AUnit/issues/56
-#elif defined(ARDUINO_ARCH_SAMD) && defined(ARDUINO_API_VERSION)
-#error SAMD21 with arduino:samd >= 1.8.10 not supported, https://github.com/bxparks/AUnit/issues/66
-#elif defined(ARDUINO_API_VERSION)
-#error Platforms using ArduinoCore-API not supported
-#endif
 
 #include "aunit/print64.h"
 #include "aunit/Verbosity.h"
@@ -71,7 +56,7 @@ SOFTWARE.
 #include "aunit/TestMacros.h"
 
 // Version format: xxyyzz == "xx.yy.zz"
-#define AUNIT_VERSION 10505
-#define AUNIT_VERSION_STRING "1.5.5"
+#define AUNIT_VERSION 10300
+#define AUNIT_VERSION_STRING "1.3"
 
 #endif

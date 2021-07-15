@@ -81,21 +81,33 @@ void Test::resolve() {
     printer->print(TEST_STRING);
     mName.print(printer);
     printer->println(F(" passed."));
+    printer->print(F("<test-case asserts=\"0\" fullname=\"Unit.Tests.Assemblies.AUnit.FailingTest\" id=\"\" name=\""));
+    mName.print(printer);
+    printer->println(F("\" result=\"Passed\" time=\"\"></test-case>"));
   } else if (mStatus == Test::kStatusFailed
       && isVerbosity(Verbosity::kTestFailed)) {
     printer->print(TEST_STRING);
     mName.print(printer);
     printer->println(F(" failed."));
+    printer->print(F("<test-case asserts=\"0\" fullname=\"Unit.Tests.Assemblies.AUnit.FailingTest\" id=\"\" name=\""));
+    mName.print(printer);
+    printer->println(F("\" result=\"Failed\" time=\"\"></test-case>"));
   } else if (mStatus == Test::kStatusSkipped
       && isVerbosity(Verbosity::kTestSkipped)) {
     printer->print(TEST_STRING);
     mName.print(printer);
     printer->println(F(" skipped."));
+    printer->print(F("<test-case asserts=\"0\" fullname=\"Unit.Tests.Assemblies.AUnit.FailingTest\" id=\"\" name=\""));
+    mName.print(printer);
+    printer->println(F("\" result=\"Skipped\" time=\"\"></test-case>"));
   } else if (mStatus == Test::kStatusExpired
       && isVerbosity(Verbosity::kTestExpired)) {
     printer->print(TEST_STRING);
     mName.print(printer);
     printer->println(F(" timed out."));
+    printer->print(F("<test-case asserts=\"0\" fullname=\"Unit.Tests.Assemblies.AUnit.FailingTest\" id=\"\" name=\""));
+    mName.print(printer);
+    printer->println(F("\" result=\"inconclusive\" time=\"\"></test-case>"));
   }
 }
 

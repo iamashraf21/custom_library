@@ -1,9 +1,5 @@
 #line 2 "fixture.ino"
 
-/*
- * Unit test that shows how to use test fixtures using the testF() macro.
- */
-
 #include <stdarg.h>
 #include <AUnit.h>
 
@@ -37,6 +33,16 @@ class Container {
 
 // Create an instance of the Container.
 Container container;
+
+void setup() {
+  delay(1000); // Wait for stability on some boards, otherwise garage on Serial
+  Serial.begin(115200); // ESP8266 default of 74880 not supported on Linux
+  while (!Serial); // for the Arduino Leonardo/Micro only
+}
+
+void loop() {
+  TestRunner::run();
+}
 
 class LogTest: public TestOnce {
   protected:
@@ -77,37 +83,17 @@ testF(LogTest, insert) {
   // Very useful for debugging assertRecords()
   // enableVerbosity(Verbosity::kAssertionPassed);
 
-  // The assertNoFatalFailure() macro prevents execution from continuing if
-  // assertRecords() contains a failure.
-  assertNoFatalFailure(assertRecords(2, "bike", 1, "car", 2));
+  assertRecords(2, "bike", 1, "car", 2);
 
-  // The assertNoFatalFailure() above prevents this statement from executing if
-  // assertRecords() fails.
+  // Warning: This statement will execute even if assertRecords() fails. See
+  // README.md about "early returns" from assert statements.
   container.insert("train", 3);
 
-  // This assert will return immediately upon failure.
+  // This assert will return immediately if assertRecords() fails. See
+  // README.md about delayed status verification.
   assertEqual(3, container.numRecords);
 
-  // This statement will not execute if the above assertEqual() fails.
+  // This statement will not execute if assertRecords() fails because the
+  // above assertEqual() will return.
   container.insert("plane", 4);
-}
-
-//----------------------------------------------------------------------------
-// setup() and loop()
-//----------------------------------------------------------------------------
-
-void setup() {
-  delay(1000); // Wait for stability on some boards, otherwise garage on Serial
-  Serial.begin(115200); // ESP8266 default of 74880 not supported on Linux
-  while (!Serial); // for the Arduino Leonardo/Micro only
-
-  Serial.println(F("This test should produce the following:"));
-  Serial.println(
-    F("1 passed, 0 failed, 0 skipped, 0 timed out, out of 1 test(s).")
-  );
-  Serial.println(F("----"));
-}
-
-void loop() {
-  TestRunner::run();
 }

@@ -347,10 +347,6 @@ bool compareEqual(double a, double b) {
   return (a == b);
 }
 
-bool compareEqual(const void* a, const void* b) {
-  return (a == b);
-}
-
 bool compareEqual(const char* a, const char* b) {
   return compareString(a, b) == 0;
 }
@@ -731,10 +727,6 @@ bool compareNotEqual(unsigned long long a, unsigned long long b) {
 }
 
 bool compareNotEqual(double a, double b) {
-  return (a != b);
-}
-
-bool compareNotEqual(const void* a, const void* b) {
   return (a != b);
 }
 
