@@ -1,7 +1,7 @@
 pool: MyLocalPool
 
 container:
-  image: myworkregistry007.azurecr.io/build_repo:767
+  image: myworkregistry007.azurecr.io/build_repo:775
   endpoint: myWorkRegistry007
   options: -v /dev:/dev --privileged
 
