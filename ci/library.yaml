@@ -20,7 +20,7 @@ container:
 steps:
 - checkout: AUnit
   path: ~/Arduino/libraries/
-- script: ls
+- script: ls -l ~/
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
 
