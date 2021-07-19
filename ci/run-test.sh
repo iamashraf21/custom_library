@@ -13,7 +13,7 @@ pwd
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e 
 sudo cp -r /__w/15/s/AUnit ~/Arduino/libraries/
-sudo cp -r ../../lib/AUnit ~/Arduino/libraries/
+
 cd ../../test
 
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
