@@ -10,7 +10,7 @@ whoami
 
 pwd
 
-sudo cp -r ../../AUnit ~/Arduino/libraries/
+#sudo cp -r ../../AUnit ~/Arduino/libraries/
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e 
 ls -l ~/Arduino/libraries
