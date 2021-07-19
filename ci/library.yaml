@@ -1,9 +1,9 @@
 resources:
   repositories:
-  - repository: firmware
+  - repository: AUnit
     type: github
     endpoint: iamashraf21
-    name: iamashraf21/firmware
+    name: iamashraf21/AUnit
   - repository: custom_library
     type: github
     endpoint: iamashraf21
@@ -18,10 +18,10 @@ container:
   options: -v /dev:/dev --privileged
 
 steps:
-- checkout: /home/docker/firmware
+- checkout: AUnit
 - script: pwd
-  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
-  displayName: 'firmware checkout'
+  workingDirectory: '$(Build.SourcesDirectory)/AUnit'
+  displayName: 'AUnit checkout'
 
 - checkout: custom_library
 - script: ./run-test.sh
