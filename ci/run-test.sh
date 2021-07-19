@@ -8,6 +8,8 @@ shopt -s globstar
 echo "compiling examples"
 whoami
 
+pwd
+cd ../..
 ls -lRh
 
 cd ../examples/ecc_test
