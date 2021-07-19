@@ -13,7 +13,7 @@ whoami
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
-ls -l ~/
+ls -lRh /home
 echo "done" 
 
 sudo cp -r ../../lib/AUnit ~/Arduino/libraries/
