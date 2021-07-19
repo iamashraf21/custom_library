@@ -9,8 +9,6 @@ echo "compiling examples"
 whoami
 
 pwd
-cd ../..
-ls -lRh
 
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e 
