@@ -6,22 +6,16 @@ set -e
 shopt -s globstar
 
 echo "compiling examples"
-
-#arduino-cli core search Moteino
 whoami
-#sudo usermod -a -G dialout docker
+
+ls -lRh
+
 cd ../examples/ecc_test
-arduino-cli compile -b Moteino:samd:moteino_m0 -e
-echo "compiling Aunit testcases"
-ls -lRh /home
-echo "done" 
+arduino-cli compile -b Moteino:samd:moteino_m0 -e 
 
 sudo cp -r ../../lib/AUnit ~/Arduino/libraries/
 cd ../../test
 
-sudo ls -l ~/Arduino/libraries/AUnit/
-
-#arduino-cli core install Moteino:samd
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
