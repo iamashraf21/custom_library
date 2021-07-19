@@ -16,7 +16,7 @@ echo "compiling Aunit testcases"
 ls -l ~/
 echo "done" 
 
-sudo cp -r ../lib/AUnit ~/Arduino/libraries/
+sudo cp -r ../../lib/AUnit ~/Arduino/libraries/
 cd ../../test
 
 sudo ls -l ~/Arduino/libraries/AUnit/
