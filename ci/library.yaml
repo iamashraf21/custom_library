@@ -20,12 +20,12 @@ container:
 steps:
 - checkout: firmware
 - script: pwd
-  workingDirectory: '$(Build.SourcesDirectory)/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
   displayName: 'firmware checkout'
 
 - checkout: custom_library
 - script: ./run-test.sh
-  workingDirectory: '$(Build.SourcesDirectory)/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Running the shell script in custom lib'
 
 - task: PublishTestResults@2
