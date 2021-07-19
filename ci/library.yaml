@@ -1,3 +1,15 @@
+resources:
+  repositories:
+  - repository: firmware
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/firmware
+  - repository: custom_library
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/custom_library
+    
+
 pool: MyLocalPool
 
 container:
@@ -6,9 +18,15 @@ container:
   options: -v /dev:/dev --privileged
 
 steps:
+- checkout: firmware
+- script: pwd
+  workingDirectory: '$(Build.SourcesDirectory)/ci'
+  displayName: 'firmware checkout'
+
+- checkout: custom_library
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/ci'
-  displayName: 'Running the shell script'
+  displayName: 'Running the shell script in custom lib'
 
 - task: PublishTestResults@2
   inputs:
