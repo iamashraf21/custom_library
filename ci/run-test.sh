@@ -9,7 +9,7 @@ echo "compiling examples"
 
 #arduino-cli core search Moteino
 whoami
-sudo usermod -a -G dialout docker
+#sudo usermod -a -G dialout docker
 #cd ../examples/ecc_test
 #arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
