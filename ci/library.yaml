@@ -19,9 +19,9 @@ container:
 
 steps:
 - checkout: AUnit
-  path: /home/docker/Arduino/libraries/
+  path: ~/Arduino/libraries/
 - script: ls
-  workingDirectory: '~/Arduino/libraries/'
+  workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
 
 - checkout: custom_library
