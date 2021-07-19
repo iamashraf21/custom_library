@@ -5,12 +5,6 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 
-echo "compiling examples"
-whoami
-
-pwd
-
-#sudo cp -r ../../AUnit ~/Arduino/libraries/
 cd ../examples/ecc_test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e 
 ls -l ~/Arduino/libraries
