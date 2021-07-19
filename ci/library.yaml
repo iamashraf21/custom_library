@@ -18,7 +18,7 @@ container:
   options: -v /dev:/dev --privileged
 
 steps:
-- checkout: firmware
+- checkout: /home/docker/firmware
 - script: pwd
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
   displayName: 'firmware checkout'
@@ -31,7 +31,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/test/test-results.xml'
+    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
     testRunTitle: 'Publish test results'
     failTaskOnFailedTests: true
 
