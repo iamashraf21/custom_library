@@ -10,16 +10,14 @@ echo "compiling examples"
 #arduino-cli core search Moteino
 whoami
 #sudo usermod -a -G dialout docker
-#cd ../examples/ecc_test
-#arduino-cli compile -b Moteino:samd:moteino_m0 -e
+cd ../examples/ecc_test
+arduino-cli compile -b Moteino:samd:moteino_m0 -e
 echo "compiling Aunit testcases"
 ls -l ~/
 echo "done" 
-#mkdir ~/Arduino
-#mkdir ~/Arduino/libraries
 
 sudo cp -r ../lib/AUnit ~/Arduino/libraries/
-cd ../test
+cd ../../test
 
 sudo ls -l ~/Arduino/libraries/AUnit/
 
