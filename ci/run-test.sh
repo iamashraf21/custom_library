@@ -5,11 +5,8 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 
-cd ../examples/ecc_test
-arduino-cli compile -b Moteino:samd:moteino_m0 -e 
-ls -l ~/Arduino/libraries
 
-cd ../../test
+cd ../test
 
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
