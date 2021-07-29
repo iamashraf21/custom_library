@@ -31,7 +31,7 @@ def main():
 	#initialising timeout of 10 secs
 	signal.signal(signal.SIGALRM, handler)
 	signal.alarm(10)
-	print ("timeout starts.......")
+	#print ("timeout starts.......")
 	
 	#opening the serial port
 	ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1) 
@@ -42,7 +42,7 @@ def main():
 		data = ser.readline().decode('ascii')
 		if (data):
 			signal.alarm(10)
-			print ("timeout reset.......")
+			#print ("timeout reset.......")
 			print (data.rstrip("\r\n"))
 			f2.write(data)
 			if(data[0:10] == "<test-case"):
@@ -56,7 +56,13 @@ def main():
 				testsuite_st_tag = data
 			elif(data[0:13] == '</test-suite>'):
 				testsuite_ed_tag = data
-			if(data == '</test-run>'):
+			elif(data[0:9] == '<failure>'):
+				failure_start_tag = data
+			elif(data[0:9] == '<message>'):
+				failure_message = data
+			elif(data[0:10] =="</failure>"):
+				failure_end_tag = data
+			if(data[0:11] == '</test-run>'):
 				end_tag = data
 				break
 		else:
@@ -66,6 +72,9 @@ def main():
 	f1.write(start_tag)
 	f1.write(testrun)
 	f1.write(testsuite_st_tag)
+	f1.write(failure_start_tag)
+	f1.write(failure_message)
+	f1.write(failure_end_tag)
 	for i in range(0,testcount):
 		f1.write(testcases[i])
 	f1.write(testsuite_ed_tag)
