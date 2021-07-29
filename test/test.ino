@@ -12,7 +12,7 @@ test(incorrect) {
 
 test(Custom) {
   int x = 4;
-  assertEqual(x, 4);
+  assertEqual(x, 5);
 }
 
 //----------------------------------------------------------------------------
@@ -26,6 +26,7 @@ void setup() {
 }
 
 void loop() {
-  aunit::TestRunner::run();
+  //aunit::TestRunner::run();
+  aunit::PrintXml::runXml();
   delay(500);
 }
