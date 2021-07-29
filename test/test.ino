@@ -26,6 +26,7 @@ void setup() {
 }
 
 void loop() {
-  aunit::TestRunner::run();
+  //aunit::TestRunner::run();
+  aunit::PrintXml::runXml();
   delay(500);
 }
