@@ -11,6 +11,7 @@ cd ../test
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
 arduino-cli upload -p /dev/ttyACM0 -b Moteino:samd:moteino_m0
 
+cd ../extras/tools
 sleep 5
 python SerialRead.py
 
