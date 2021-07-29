@@ -31,7 +31,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
+    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/extras/tools/test-results.xml'
     testRunTitle: 'Publish test results'
     failTaskOnFailedTests: true
 
