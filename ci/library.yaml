@@ -28,11 +28,15 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Running the shell script in custom lib'
 
-- task: PublishPipelineArtifact@1
+- task: UniversalPackages@0
   inputs:
-    targetPath: $(Build.SourcesDirectory)/custom_library/
-    artifactName: custom_library
-
+    command: 'publish'
+    publishDirectory: './custom_library'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
+    vstsFeedPackagePublish: 'custom_library'
+    versionOption: 'patch'
+  displayName: 'publishing the artifacts'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
