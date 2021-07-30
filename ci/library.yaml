@@ -28,17 +28,10 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Running the shell script in custom lib'
 
-- script: apt install zip
-  workingDirectory: '$(Build.SourcesDirectory)'
-  displayName: 'install zip'
-
-- script: zip -r library.zip custom_library
-  workingDirectory: '$(Build.SourcesDirectory)'
-  displayName: 'Making zip of custom library'
-
-- script: ls
-  workingDirectory: '$(Build.SourcesDirectory)'
-  displayName: 'ls library'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: $(Build.SourcesDirectory)/custom_library/
+    artifactName: custom_library
 
 - task: PublishTestResults@2
   inputs:
