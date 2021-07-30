@@ -28,9 +28,13 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Running the shell script in custom lib'
 
-- script: ls
+- script: zip -r library.zip custom_library
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'Making zip of custom library'
+
+- script: ls
+  workingDirectory: '$(Build.SourcesDirectory)'
+  displayName: 'ls library'
 
 - task: PublishTestResults@2
   inputs:
