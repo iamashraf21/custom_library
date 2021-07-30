@@ -28,6 +28,10 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Running the shell script in custom lib'
 
+- script: ls
+  workingDirectory: '$(Build.SourcesDirectory)'
+  displayName: 'Making zip of custom library'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
