@@ -42,5 +42,5 @@ steps:
     testResultsFormat: 'NUnit'
     testResultsFiles: '$(Build.SourcesDirectory)/AUnit/extras/test-results.xml'
     testRunTitle: 'Publish test results'
-    failTaskOnFailedTests: true
+    failTaskOnFailedTests: false
 
