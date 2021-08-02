@@ -12,7 +12,7 @@ test(incorrect) {
 
 test(Custom) {
   int x = 4;
-  assertEqual(x, 5);
+  assertEqual(x, 4);
 }
 
 //----------------------------------------------------------------------------
