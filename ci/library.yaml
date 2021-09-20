@@ -29,7 +29,7 @@ steps:
 - checkout: custom_library
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
-  displayName: 'Running the shell script in custom lib'
+  displayName: 'Compiling and uploading the AUnit test cases'
 
 - task: UniversalPackages@0
   inputs:
